@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rokomari_poc.noteme.MakeNoteActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_note"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_title"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+
+                >
+
+                <EditText
+                    android:id="@+id/edittext_title"
+                    android:layout_width="300dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Title"
+
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageview_title_icon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/ic_todo"
+                android:layout_gravity="center|right"
+
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_description"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                >
+
+                <EditText
+                    android:id="@+id/edittext_details"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dp"
+                    android:gravity="top|left"
+
+                    android:inputType="textEmailAddress|textMultiLine"
+                    android:lines="20"
+                    android:minLines="5"
+                    android:scrollHorizontally="false"
+                    android:scrollbars="vertical"
+                    android:layout_marginRight="10dp"
+
+                    android:hint="Details"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:layout_marginTop="60dp"
+            android:background="#E87E04"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/category_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:scrollbars="horizontal"
+
+                >
+
+
+
+                <ImageView
+                    android:id="@+id/imageview_todo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_todo"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_note"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_edit"
+                    android:layout_marginRight="20dp"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/imageview_remeber_me"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_remember_me"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_tag"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_tag"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_urgencies"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_urgencies"
+                    android:layout_marginRight="20dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_work_update"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/ic_work_update"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_office"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="40dp"
+                    android:src="@drawable/ic_office"
+                    />
+
+                <ImageView
+                    android:id="@+id/imageview_personal"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_personal"
+                    />
+
+
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
+
+        <Button
+            android:id="@+id/button_note_me"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Note Me"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:background="#3498db"
+            android:layout_marginTop="20dp"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make Note"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+
+            >
+
+
+
+
+            <ImageView
+                android:id="@+id/imageview_action_bar_mail"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_email"
+
+                android:layout_gravity="center"
+                android:onClick="actionMail"
+                />
+
+
+            <ImageView
+            android:id="@+id/imageview_action_bar_phone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_phone"
+                android:layout_gravity="center"
+                android:onClick="actionCall"
+
+            />
+
+
+            <ImageView
+                android:id="@+id/imageview_action_bar_url"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_web"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:onClick="actionUrl"
+                />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
