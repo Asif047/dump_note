@@ -3,8 +3,11 @@ package com.rokomari_poc.noteme.DetailsNote;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rokomari_poc.noteme.AlertBox.ShowAlertDetails;
 import com.rokomari_poc.noteme.AllNotes.ModelNotes;
 import com.rokomari_poc.noteme.R;
 
@@ -18,17 +21,49 @@ public class DetailsNoteActivity extends AppCompatActivity {
     private ModelNotes modelNotes;
     private ApiInterfaceDetailsNote apiInterfaceDetailsNote;
     private TextView tvHours,tvDate,tvStatus,tvTitle,tvDetails;
+    private ImageView ivPhone,ivUrl,ivMail;
+
+    private ShowAlertDetails showAlertDetails;
+    private String phone="01215112233";
+    private String email="abc@gmail.com";
+    private String url="www.google.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_note);
 
+        showAlertDetails=new ShowAlertDetails(this);
+
         tvHours=findViewById(R.id.textview_hours);
         tvDate=findViewById(R.id.textview_date);
         tvStatus=findViewById(R.id.textview_status);
         tvTitle=findViewById(R.id.textview_title);
         tvDetails=findViewById(R.id.textview_details);
+
+        ivPhone=findViewById(R.id.imageview_phone);
+        ivUrl=findViewById(R.id.imageview_web);
+        ivMail=findViewById(R.id.imageview_email);
+
+        ivPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAlertDetails.showPhoneAlert(phone);
+            }
+        });
+
+        ivMail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAlertDetails.showEmailAlert(email);
+            }
+        });
+        ivUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showAlertDetails.showUrlAlert(url);
+            }
+        });
 
         String urlString="/notes/1";
 
