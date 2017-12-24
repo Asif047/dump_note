@@ -49,7 +49,7 @@
                     android:id="@+id/edittext_title"
                     android:layout_width="300dp"
                     android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:hint="Title"
 
                     />
@@ -96,7 +96,7 @@
                 <EditText
                     android:id="@+id/edittext_details"
                     android:layout_width="fill_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="120dp"
                     android:gravity="top|left"
 
                     android:inputType="textEmailAddress|textMultiLine"
@@ -119,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:background="#E87E04"
             android:scrollbars="none">
 
@@ -206,21 +206,22 @@
         </HorizontalScrollView>
 
 
-        <Button
-            android:id="@+id/button_note_me"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="Note Me"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:background="#3498db"
-            android:layout_marginTop="20dp"
-            />
-
 
 
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/button_note_me"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Note Me"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="#3498db"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        />
 
 
 

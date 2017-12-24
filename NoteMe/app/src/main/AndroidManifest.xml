@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +14,14 @@
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".SplashScreenActivity">
+
+
+        </activity>
         <activity
             android:name=".MakeNoteActivity"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MakeNoteActivity" />
@@ -24,8 +29,12 @@
 
         </activity>
         <activity android:name=".ShowResponseActivity" />
-        <activity android:name=".AllNotes.AllNotesActivity" />
-        <activity android:name=".DetailsNote.DetailsNoteActivity">
+        <activity android:name=".AllNotes.AllNotesActivity">
+
+        </activity>
+        <activity android:name=".DetailsNote.DetailsNoteActivity" />
+        <activity android:name=".LogIn.LogInActivity" />
+        <activity android:name=".Home.HomeActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
