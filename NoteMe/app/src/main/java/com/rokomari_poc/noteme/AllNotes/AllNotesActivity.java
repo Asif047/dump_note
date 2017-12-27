@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.rokomari_poc.noteme.R;
 
@@ -37,6 +38,7 @@ public class AllNotesActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<ModelNotes>> call, Response<List<ModelNotes>> response) {
                 modelNotes=response.body();
+                Log.e("####RESPONSE:",modelNotes.get(0).getCategory());
                 recyclerAdapterNotes=new RecyclerAdapterNotes(modelNotes);
                 recyclerView.setAdapter(recyclerAdapterNotes);
             }
@@ -44,6 +46,7 @@ public class AllNotesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<ModelNotes>> call, Throwable t) {
 
+                Log.e("####RESPONSE:","Failure");
             }
         });
     }

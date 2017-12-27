@@ -35,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/imageview_action_bar_mail"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:src="@drawable/ic_email"
 
                 android:layout_gravity="center"
@@ -46,9 +46,9 @@
 
             <ImageView
             android:id="@+id/imageview_action_bar_phone"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
             android:src="@drawable/ic_phone"
                 android:layout_gravity="center"
                 android:onClick="actionCall"
@@ -58,9 +58,9 @@
 
             <ImageView
                 android:id="@+id/imageview_action_bar_url"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
                 android:src="@drawable/ic_web"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center"

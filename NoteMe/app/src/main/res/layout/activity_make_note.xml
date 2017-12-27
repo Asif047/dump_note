@@ -19,7 +19,7 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
-            android:src="@drawable/icon_note"
+            android:src="@drawable/splash_icon"
             />
 
 
@@ -49,7 +49,7 @@
                     android:id="@+id/edittext_title"
                     android:layout_width="300dp"
                     android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:hint="Title"
 
                     />
@@ -96,7 +96,7 @@
                 <EditText
                     android:id="@+id/edittext_details"
                     android:layout_width="fill_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="120dp"
                     android:gravity="top|left"
 
                     android:inputType="textEmailAddress|textMultiLine"
@@ -119,9 +119,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:background="#E87E04"
-            android:scrollbars="none">
+            android:scrollbars="horizontal">
 
             <LinearLayout
                 android:id="@+id/category_layout"
@@ -135,69 +135,206 @@
 
 
 
-                <ImageView
-                    android:id="@+id/imageview_todo"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_todo"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    />
+                    >
+                    <ImageView
+                        android:id="@+id/imageview_todo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_todo"
 
-                <ImageView
-                    android:id="@+id/imageview_note"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_edit"
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Note"
+                        android:textSize="15dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="10dp"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    />
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageview_note"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_edit"
+
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="To Do"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp"
+                        />
+
+                </LinearLayout>
 
 
-                <ImageView
-                    android:id="@+id/imageview_remeber_me"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_remember_me"
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    />
+                    >
+                    <ImageView
+                        android:id="@+id/imageview_remeber_me"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_remember_me"
 
-                <ImageView
-                    android:id="@+id/imageview_tag"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_tag"
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Remember Me"
+                        android:textSize="15dp"
+                        android:textColor="#ffffff"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    />
+                    >
+                    <ImageView
+                        android:id="@+id/imageview_tag"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_tag"
 
-                <ImageView
-                    android:id="@+id/imageview_urgencies"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_urgencies"
+                        />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Tag/Words"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp"
+                        />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    />
+                    >
+                    <ImageView
+                        android:id="@+id/imageview_urgencies"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_urgencies"
 
-                <ImageView
-                    android:id="@+id/imageview_work_update"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                        />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Urgencies"
+                        android:textSize="15dp"
+                        android:textColor="#ffffff"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/ic_work_update"
-                    />
+                    >
 
-                <ImageView
-                    android:id="@+id/imageview_office"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="40dp"
-                    android:src="@drawable/ic_office"
-                    />
+                    <ImageView
+                        android:id="@+id/imageview_work_update"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
 
-                <ImageView
-                    android:id="@+id/imageview_personal"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_personal"
-                    />
+                        android:src="@drawable/ic_work_update"
+                        />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Work Update"
+                        android:textSize="15dp"
+                        android:textColor="#ffffff"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="20dp"
+                    >
+                    <ImageView
+                        android:id="@+id/imageview_office"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+
+                        android:src="@drawable/ic_office"
+                        />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Office"
+                        android:textColor="#ffffff"
+                        android:textSize="15dp"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageview_personal"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_personal"
+                        />
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Personal"
+                        android:textSize="15dp"
+                        android:textColor="#ffffff"
+                        />
+                </LinearLayout>
+
+
 
 
             </LinearLayout>
@@ -206,21 +343,22 @@
         </HorizontalScrollView>
 
 
-        <Button
-            android:id="@+id/button_note_me"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="Note Me"
-            android:textSize="20dp"
-            android:textColor="#ffffff"
-            android:background="#3498db"
-            android:layout_marginTop="20dp"
-            />
-
 
 
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/button_note_me"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Note Me"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="#3498db"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        />
 
 
 
