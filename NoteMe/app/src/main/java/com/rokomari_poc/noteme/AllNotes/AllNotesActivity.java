@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.rokomari_poc.noteme.R;
 
@@ -20,10 +22,16 @@ public class AllNotesActivity extends AppCompatActivity {
     private List<ModelNotes> modelNotes;
     private ApiInterfaceNotes apiInterfaceNotes;
 
+    private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_notes);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(toolbar);
 
         recyclerView=(RecyclerView)findViewById(R.id.recyclerview_all_notes);
         layoutManager=new LinearLayoutManager(this);
@@ -37,6 +45,7 @@ public class AllNotesActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<ModelNotes>> call, Response<List<ModelNotes>> response) {
                 modelNotes=response.body();
+                Log.e("####RESPONSE:",modelNotes.get(0).getCategory());
                 recyclerAdapterNotes=new RecyclerAdapterNotes(modelNotes);
                 recyclerView.setAdapter(recyclerAdapterNotes);
             }
@@ -44,6 +53,7 @@ public class AllNotesActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<ModelNotes>> call, Throwable t) {
 
+                Log.e("####RESPONSE:","Failure");
             }
         });
     }

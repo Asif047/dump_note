@@ -25,12 +25,18 @@ public class MakeNoteActivity extends AppCompatActivity {
     private Button btnNoteMe;
     private MyPostRequest myPostRequest;
 
+    private Toolbar toolbar;
+
     private String date_time,status,category,phone,url,mail,response_msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_note);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(toolbar);
 
         myPostRequest=new MyPostRequest(this);
 
@@ -51,9 +57,13 @@ public class MakeNoteActivity extends AppCompatActivity {
         btnNoteMe=findViewById(R.id.button_note_me);
 
         //for getting action bar starts
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.action_bar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         //for getting action bar ends
 
         //to get time starts
