@@ -30,7 +30,7 @@ public class RecyclerAdapterNotes extends RecyclerView.Adapter<RecyclerAdapterNo
         holder.tvTitle.setText(modelNotes.get(position).getTitle());
         holder.tvDate.setText(modelNotes.get(position).getTimestamp());
         holder.tvStatus.setText(modelNotes.get(position).getStatus());
-        holder.tvSerial.setText(""+position);
+        holder.tvSerial.setText(""+(position+1));
 
     }
 

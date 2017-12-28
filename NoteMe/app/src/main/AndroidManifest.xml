@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
 
     <application
         android:allowBackup="true"
@@ -13,19 +17,36 @@
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".SplashScreenActivity">
+
+        </activity>
         <activity
             android:name=".MakeNoteActivity"
-            android:windowSoftInputMode="stateHidden">
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MakeNoteActivity" />
 
 
+
         </activity>
         <activity android:name=".ShowResponseActivity" />
-        <activity android:name=".AllNotes.AllNotesActivity" />
-        <activity android:name=".DetailsNote.DetailsNoteActivity">
+        <activity android:name=".AllNotes.AllNotesActivity">
+
+        </activity>
+        <activity android:name=".DetailsNote.DetailsNoteActivity" >
+
+
+        </activity>
+        <activity android:name=".LogIn.LogInActivity">
+
+
+        </activity>
+        <activity android:name=".Home.HomeActivity">
+
+        </activity>
+        <activity android:name=".RememberMe.LicencesActivity" />
+        <activity android:name=".RememberMe.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,6 +55,18 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".RememberMe.ReminderAddActivity" />
+        <activity android:name=".RememberMe.ReminderEditActivity"></activity>
+
+
+        <receiver android:name=".RememberMe.AlarmReceiver"/>
+
+        <receiver android:name=".RememberMe.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
