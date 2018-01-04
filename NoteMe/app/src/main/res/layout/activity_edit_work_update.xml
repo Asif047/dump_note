@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rokomari_poc.noteme.WorkUpdate.EditWorkUpdateActivity">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="16dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="?attr/colorPrimary" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar"
+        android:layout_margin="20dp"
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+
+            >
+
+            <EditText
+                android:id="@+id/edittext_details"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:gravity="top|left"
+
+                android:inputType="textEmailAddress|textMultiLine"
+                android:lines="20"
+                android:minLines="5"
+                android:scrollHorizontally="false"
+                android:scrollbars="vertical"
+                android:layout_marginRight="10dp"
+
+                android:hint="Write work update"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_note_me"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Send Update"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:background="#3498db"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+</RelativeLayout>

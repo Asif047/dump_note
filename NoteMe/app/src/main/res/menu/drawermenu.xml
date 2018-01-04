@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home" android:title="Homes" android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/all_notes" android:title="All Notes" android:icon="@drawable/ic_todo"/>
+    <item android:id="@+id/make_notes" android:title="Make Notes" android:icon="@drawable/ic_note"/>
+    <item android:id="@+id/remember_me" android:title="Remember me" android:icon="@drawable/ic_remember_me"/>
+    <item android:id="@+id/chat" android:title="Chat" android:icon="@drawable/ic_chat"/>
+    <item android:id="@+id/settings" android:title="Settings" android:icon="@drawable/ic_settings"/>
+
+</menu>
