@@ -39,7 +39,7 @@ public class MyPostRequest {
     }
 
     public String postData(String timestamp, String status, String title, String detail, String url, String mail,
-                         String phone, String category) {
+                         String phone, String category,String account_id) {
 
 
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
@@ -61,6 +61,7 @@ public class MyPostRequest {
                 .url("http://192.168.11.205:5001/notes/new")
                 .post(body)
                 .header("token","68e109f0f40ca72a15e05cc22786f8e6")
+                .header("jwt",account_id)
                 .addHeader("content-type", "application/json; charset=utf-8")
                 .build();
 
