@@ -2,6 +2,7 @@ package com.rokomari_poc.noteme;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -25,12 +26,28 @@ public class MakeNoteActivity extends AppCompatActivity {
     private Button btnNoteMe;
     private MyPostRequest myPostRequest;
 
-    private String date_time,status,category,phone,url,mail,response_msg;
+    private Toolbar toolbar;
+
+    private String date_time,status="1",category="2",phone="",url="",mail="",response_msg;
+    private String account_id="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_note);
+
+
+        SharedPreferences prefs=getSharedPreferences("Profile_PREF",MODE_PRIVATE);
+        String restoredAccount=prefs.getString("account_id",null);
+
+        if(restoredAccount!=null)
+        {
+            account_id=prefs.getString("account_id","No account defined");
+        }
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+        setSupportActionBar(toolbar);
 
         myPostRequest=new MyPostRequest(this);
 
@@ -51,9 +68,13 @@ public class MakeNoteActivity extends AppCompatActivity {
         btnNoteMe=findViewById(R.id.button_note_me);
 
         //for getting action bar starts
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            getSupportActionBar().setCustomView(R.layout.action_bar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
         //for getting action bar ends
 
         //to get time starts
@@ -62,11 +83,15 @@ public class MakeNoteActivity extends AppCompatActivity {
         date_time = sd.format(c.getTime());
         //to get time ends
 
+        Drawable new_image= getResources().getDrawable(R.drawable.ic_todo_black);
+        ivTitleIcon.setBackgroundDrawable(new_image);
+
+
         ivNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 category="1";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_edit);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_note_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -75,7 +100,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="2";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_todo);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_todo_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -84,7 +109,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="3";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_remember_me);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_remember_me_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -93,7 +118,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="4";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_tag);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_tag_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -102,7 +127,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="5";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_urgencies);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_urgencies_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -111,7 +136,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="6";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_work_update);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_work_update_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -129,7 +154,7 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 category="8";
-                Drawable new_image= getResources().getDrawable(R.drawable.ic_personal);
+                Drawable new_image= getResources().getDrawable(R.drawable.ic_personal_black);
                 ivTitleIcon.setBackgroundDrawable(new_image);
             }
         });
@@ -145,7 +170,16 @@ public class MakeNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               response_msg= myPostRequest.postData(""+date_time,""+status,""+etTitle.getText(),""+etDetails.getText(),""+url,""+mail,""+phone,""+category);
+                if(etTitle.getText().toString().isEmpty())
+                    etTitle.setError("Please enter the title");
+                if(etDetails.getText().toString().isEmpty())
+                    etDetails.setError("Please enter the details");
+
+                if(!etTitle.getText().toString().isEmpty()&&!etDetails.getText().toString().isEmpty())
+                {
+                    myPostRequest.postData(""+date_time,""+status,""+etTitle.getText(),""+etDetails.getText(),""+url,""+mail,""+phone,""+category,account_id);
+                }
+
                 //Toast.makeText(MakeNoteActivity.this,""+response_msg,Toast.LENGTH_SHORT).show();
             }
         });
