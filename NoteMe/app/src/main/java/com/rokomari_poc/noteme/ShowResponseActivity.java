@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
+import com.rokomari_poc.noteme.AllNotes.AllNotesActivity;
 
 public class ShowResponseActivity extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class ShowResponseActivity extends AppCompatActivity {
 //        buildDialog(ShowResponseActivity.this).show();
         if (response_status.trim().equals("saved"))
             showSuccess();
+        else if(response_status.trim().equals("Deleted"))
+            showSuccessDelete();
         else
             showInvalid();
     }
@@ -54,19 +57,36 @@ public class ShowResponseActivity extends AppCompatActivity {
 
     void showSuccess() {
         sDialogSuccess.setCancelable(false);
-        sDialogSuccess.setTitleText("Success")
+        sDialogSuccess.setTitleText("Done")
                 .setContentText("Good job")
                 .setConfirmText("OK")
                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {
                         finish();
-//                        Intent intent=new Intent(ShowResponseActivity.this,PostActivity.class);
-//                        startActivity(intent);
+                        Intent intent=new Intent(ShowResponseActivity.this,AllNotesActivity.class);
+                        startActivity(intent);
                     }
                 })
                 .show();
     }
+
+    void showSuccessDelete() {
+        sDialogSuccess.setCancelable(false);
+        sDialogSuccess.setTitleText("Deleted")
+                .setContentText("Good job")
+                .setConfirmText("OK")
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        finish();
+                        Intent intent=new Intent(ShowResponseActivity.this,AllNotesActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .show();
+    }
+
 
     void showDuplicate() {
         sDialogDuplicate.setCancelable(false);

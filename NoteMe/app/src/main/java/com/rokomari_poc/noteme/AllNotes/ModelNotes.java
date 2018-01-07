@@ -6,38 +6,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class ModelNotes {
 
-    @SerializedName("timestamp")
-    @Expose
-    private String timestamp;
-    @SerializedName("status")
-    @Expose
     private String status;
-    @SerializedName("title")
-    @Expose
-    private String title;
-    @SerializedName("detail")
-    @Expose
-    private String detail;
-    @SerializedName("url")
-    @Expose
-    private String url;
-    @SerializedName("mail")
-    @Expose
-    private String mail;
-    @SerializedName("phone")
-    @Expose
+
     private String phone;
-    @SerializedName("category")
-    @Expose
+
+    private String timestamp;
+
+    private String title;
+
+    private String url;
+
+    private String mail;
+
     private String category;
 
-    public String getTimestamp() {
-        return timestamp;
-    }
+    private Integer id;
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
+    private String detail;
 
     public String getStatus() {
         return status;
@@ -47,20 +32,28 @@ public class ModelNotes {
         this.status = status;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDetail() {
-        return detail;
-    }
-
-    public void setDetail(String detail) {
-        this.detail = detail;
     }
 
     public String getUrl() {
@@ -79,19 +72,27 @@ public class ModelNotes {
         this.mail = mail;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public String getCategory() {
         return category;
     }
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 }
