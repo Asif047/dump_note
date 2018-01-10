@@ -135,7 +135,7 @@ public class LogInActivity extends AppCompatActivity {
 
         RequestBody body = RequestBody.create(JSON, parameter.toString());
         Request request = new Request.Builder()
-                .url("http://192.168.11.205:5001/login")
+                .url("https://notes-web.herokuapp.com/login")
                 .post(body)
                 .header("token","68e109f0f40ca72a15e05cc22786f8e6")
                 .addHeader("content-type", "application/json; charset=utf-8")
@@ -165,35 +165,51 @@ public class LogInActivity extends AppCompatActivity {
                 }.getType();
 
 
-                logInPostResponseApi = gson.fromJson(responsePost, type);
-                response_status = String.format("" + logInPostResponseApi.getStatus());
 
-                user_email=logInPostResponseApi.getEmail();
-                first_name=logInPostResponseApi.getFirst_name();
-
-                Log.d("RESPONSE POST: ", response_status);
-
-                if(response_status.equals("logged_in"))
+                try
                 {
-                    SharedPreferences.Editor editor = getSharedPreferences("Profile_PREF", MODE_PRIVATE).edit();
-                    editor.putString("email", user_email);
-                    editor.putString("first_name", first_name);
-                    editor.putString("account_id", accountId);
-                    editor.apply();
+                    logInPostResponseApi = gson.fromJson(responsePost, type);
+                    response_status = String.format("" + logInPostResponseApi.getStatus());
 
-                    // Toast.makeText(context,response_status,Toast.LENGTH_SHORT).show();
-                    logInResponse="logged In";
-                    Intent intent = new Intent(LogInActivity.this, HomeActivity.class);
+                    user_email=logInPostResponseApi.getEmail();
+                    first_name=logInPostResponseApi.getFirst_name();
 
-                    startActivity(intent);
+                    Log.d("RESPONSE POST: ", response_status);
 
-                    finish();
+                    if(response_status.equals("logged_in"))
+                    {
+                        SharedPreferences.Editor editor = getSharedPreferences("Profile_PREF", MODE_PRIVATE).edit();
+                        editor.putString("email", user_email);
+                        editor.putString("first_name", first_name);
+                        editor.putString("account_id", accountId);
+                        editor.apply();
+
+                        // Toast.makeText(context,response_status,Toast.LENGTH_SHORT).show();
+                        logInResponse="logged In";
+                        Intent intent = new Intent(LogInActivity.this, HomeActivity.class);
+
+                        startActivity(intent);
+
+                        finish();
+                    }
+
+                    else
+                    {
+                        // logInResponse="log in failed";
+                        //Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_SHORT).show();
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                //show the response body
+                                Toast.makeText(LogInActivity.this,"Log in failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
                 }
-
-                else
+                catch (Exception e)
                 {
-                    // logInResponse="log in failed";
-                    //Toast.makeText(getApplicationContext(),"Incorrect email or password",Toast.LENGTH_SHORT).show();
 
                     runOnUiThread(new Runnable() {
                         @Override

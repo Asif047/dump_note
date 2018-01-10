@@ -61,7 +61,7 @@ public class MyPostRequestWorkUpdate {
 
         RequestBody body = RequestBody.create(JSON, parameter.toString());
         Request request = new Request.Builder()
-                .url("http://192.168.11.205:5001/notes/new")
+                .url("https://notes-web.herokuapp.com/notes/new")
                 .post(body)
                 .header("token","68e109f0f40ca72a15e05cc22786f8e6")
                 .header("jwt",account_id)

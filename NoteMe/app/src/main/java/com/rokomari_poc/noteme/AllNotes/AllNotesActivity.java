@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -29,8 +30,9 @@ import okhttp3.OkHttpClient;
 
 public class AllNotesActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
     SweetAlertDialog pDialog;
-    private String BASE_URL="http://192.168.11.205:5001/";
+    private String BASE_URL="https://notes-web.herokuapp.com/";
     private String path;
     OkHttpClient client;
     String response;
@@ -53,6 +55,11 @@ public class AllNotesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_notes);
 
 
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // Setting toolbar as the ActionBar with setSupportActionBar() call
+
+        toolbar.setTitle("All Notes");
         //getting account id starts
         SharedPreferences prefs=getSharedPreferences("Profile_PREF",MODE_PRIVATE);
         String restoredAccount=prefs.getString("account_id",null);
@@ -161,9 +168,9 @@ public class AllNotesActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-                        //finish();
-                        Intent intent = new Intent(AllNotesActivity.this, HomeActivity.class);
-                        startActivity(intent);
+        finish();
+        Intent intent = new Intent(AllNotesActivity.this, HomeActivity.class);
+        startActivity(intent);
 
 
     }

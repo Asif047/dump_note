@@ -35,7 +35,7 @@
             android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/splash_icon"
+            android:background="@drawable/app_logo"
             />
 
         <TextView

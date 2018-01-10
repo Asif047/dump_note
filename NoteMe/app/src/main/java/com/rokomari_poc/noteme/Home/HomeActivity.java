@@ -1,5 +1,6 @@
 package com.rokomari_poc.noteme.Home;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -9,6 +10,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +56,7 @@ public class HomeActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     private TextView tvNameHeader,tvEmailHeader;
+    private LinearLayout layoutNoLastEngagement;
 
     static SweetAlertDialog pDialog;
     private ShowAlert showAlert;
@@ -61,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
     private String account_id="",email="",first_name="";
 
     //last engagement work starts
-    private String BASE_URL="http://192.168.11.205:5001/";
+    private String BASE_URL="https://notes-web.herokuapp.com/";
     private String path;
     OkHttpClient client;
     String response;
@@ -75,7 +79,7 @@ public class HomeActivity extends AppCompatActivity {
     //last engagement work ends
 
     //category work starts
-    private String BASE_URL_CATEGORY="http://192.168.11.205:5001/";
+    private String BASE_URL_CATEGORY="https://notes-web.herokuapp.com/";
     private String path_category;
     String response_category;
     private ModelCategory modelCategory;
@@ -101,6 +105,11 @@ public class HomeActivity extends AppCompatActivity {
         tvRem=findViewById(R.id.textview_remember_me);
         tvPersonal=findViewById(R.id.textview_personal);
         //category work ends
+
+
+        //last engagement work starts
+        layoutNoLastEngagement=findViewById(R.id.layout_no_last_engagement);
+        //last engagement work ends
 
         //getting account id starts
         SharedPreferences prefs=getSharedPreferences("Profile_PREF",MODE_PRIVATE);
@@ -141,7 +150,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        Toast.makeText(HomeActivity.this,account_id,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(HomeActivity.this,account_id,Toast.LENGTH_SHORT).show();
 
         dl = (DrawerLayout) findViewById(R.id.dl);
 
@@ -320,6 +329,9 @@ public class HomeActivity extends AppCompatActivity {
                 Collection<ModelNotes> enums=gson.fromJson(response,type);
                 modelNotes=enums.toArray(new ModelNotes[enums.size()]);
 
+                if(enums.size()==0)
+                    layoutNoLastEngagement.setVisibility(View.VISIBLE);
+
                 if(data.isEmpty())
                 {
                     for(int i=0;i<enums.size();i++)
@@ -418,4 +430,33 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent=new Intent(HomeActivity.this, LogInActivity.class);
         startActivity(intent);
     }
+
+
+
+    //back button operation starts
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        //finish();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+
+    //back button operation ends
+
+
 }

@@ -14,7 +14,9 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.rokomari_poc.noteme.AlertBox.ShowAlert;
+import com.rokomari_poc.noteme.AllNotes.AllNotesActivity;
 import com.rokomari_poc.noteme.DetailsNote.DetailsNoteActivity;
+import com.rokomari_poc.noteme.Home.HomeActivity;
 import com.rokomari_poc.noteme.R;
 import com.rokomari_poc.noteme.Utils.NetworkUtils.MyNetworkCheck;
 import com.rokomari_poc.noteme.WorkUpdate.ModelWorkUpdate;
@@ -31,7 +33,7 @@ public class DetailsWorkUpdateActivity extends AppCompatActivity {
 
 
     SweetAlertDialog pDialog;
-    private String BASE_URL="http://192.168.11.205:5001/";
+    private String BASE_URL="https://notes-web.herokuapp.com/";
     private String path;
 
     OkHttpClient client;
@@ -156,6 +158,23 @@ public class DetailsWorkUpdateActivity extends AppCompatActivity {
             //mo = gson.fromJson(response,ModelNotes.class);
         }
     }
+
+
+
+    //back button operation starts
+
+    @Override
+    public void onBackPressed() {
+
+        finish();
+        Intent intent = new Intent(DetailsWorkUpdateActivity.this, HomeActivity.class);
+        startActivity(intent);
+
+
+    }
+
+
+    //back button operation ends
 
 
 }

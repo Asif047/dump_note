@@ -64,6 +64,27 @@
 
 
 
+                <LinearLayout
+                    android:id="@+id/layout_no_last_engagement"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Have Nothing to Show"
+                        android:textColor="#000000"
+                        android:layout_gravity="center"
+                        android:padding="10dp"
+
+                        />
+
+                </LinearLayout>
+
+
                 <ScrollView
                     android:id="@+id/horizontalScroll"
                     android:layout_width="wrap_content"
@@ -147,6 +168,11 @@
                             android:layout_margin="10dp"
                             app:cardBackgroundColor="#ffffff"
 
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
+
                             >
 
 
@@ -177,10 +203,11 @@
                                     android:id="@+id/textview_todo"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="ToDo"
+                                    android:text="0"
                                     android:textColor="#000000"
                                     android:textSize="25dp"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -195,6 +222,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -225,10 +257,11 @@
                                     android:id="@+id/textview_office"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Office"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -254,6 +287,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -284,10 +322,11 @@
                                     android:id="@+id/textview_urgent"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Urgent"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -302,6 +341,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -332,10 +376,11 @@
                                     android:id="@+id/textview_tag"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Tag"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -364,6 +409,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -394,10 +444,11 @@
                                     android:id="@+id/textview_note"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Note"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -412,6 +463,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -442,10 +498,11 @@
                                     android:id="@+id/textview_work"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Work Update"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -472,6 +529,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -502,10 +564,11 @@
                                     android:id="@+id/textview_remember_me"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Remember me"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 
@@ -520,6 +583,11 @@
                             android:layout_margin="10dp"
 
                             app:cardBackgroundColor="#ffffff"
+
+                            card_view:cardUseCompatPadding="true"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            card_view:cardElevation="5dp"
+                            card_view:cardCornerRadius="10dp"
                             >
 
 
@@ -550,10 +618,11 @@
                                     android:id="@+id/textview_personal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Personal"
+                                    android:text="0"
                                     android:textSize="25dp"
                                     android:textColor="#000000"
                                     android:layout_gravity="center"
+
                                     />
                             </LinearLayout>
 

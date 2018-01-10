@@ -46,7 +46,7 @@ public class ShowWorkUpdateActivity extends AppCompatActivity
     private TextView mDateText;
 
     SweetAlertDialog pDialog;
-    private String BASE_URL="http://192.168.11.205:5001/";
+    private String BASE_URL="https://notes-web.herokuapp.com/";
     private String path;
     OkHttpClient client;
     String response;
@@ -84,7 +84,6 @@ public class ShowWorkUpdateActivity extends AppCompatActivity
 
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.action_bar_work_update);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -144,6 +143,7 @@ public class ShowWorkUpdateActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                // new GetDataFromServer(mDate).execute();
+                finish();
                 Intent intent=new Intent(ShowWorkUpdateActivity.this,ShowWorkUpdateActivity.class);
                 startActivity(intent);
             }

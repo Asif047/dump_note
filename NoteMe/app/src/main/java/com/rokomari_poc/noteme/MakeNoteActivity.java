@@ -28,7 +28,7 @@ public class MakeNoteActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
 
-    private String date_time,status="1",category="2",phone="",url="",mail="",response_msg;
+    private String date_time,status="1",category="2",phone="01733547364",url="rokomari.com",mail="rokomari.com",response_msg;
     private String account_id="";
 
     @Override
@@ -79,7 +79,7 @@ public class MakeNoteActivity extends AppCompatActivity {
 
         //to get time starts
         java.util.Calendar c = java.util.Calendar.getInstance();
-        java.text.SimpleDateFormat sd = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        java.text.SimpleDateFormat sd = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         date_time = sd.format(c.getTime());
         //to get time ends
 

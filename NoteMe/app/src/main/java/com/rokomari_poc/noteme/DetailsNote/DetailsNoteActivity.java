@@ -22,9 +22,11 @@ import com.google.gson.reflect.TypeToken;
 import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.rokomari_poc.noteme.AlertBox.ShowAlert;
 import com.rokomari_poc.noteme.AlertBox.ShowAlertDetails;
+import com.rokomari_poc.noteme.AllNotes.AllNotesActivity;
 import com.rokomari_poc.noteme.AllNotes.ApiCallAllNotes;
 import com.rokomari_poc.noteme.AllNotes.ModelNotes;
 import com.rokomari_poc.noteme.AllNotes.RecyclerAdapterNotes;
+import com.rokomari_poc.noteme.Home.HomeActivity;
 import com.rokomari_poc.noteme.R;
 import com.rokomari_poc.noteme.Utils.NetworkUtils.MyNetworkCheck;
 
@@ -39,7 +41,7 @@ import okhttp3.OkHttpClient;
 public class DetailsNoteActivity extends AppCompatActivity {
 
     SweetAlertDialog pDialog;
-    private String BASE_URL="http://192.168.11.205:5001/";
+    private String BASE_URL="https://notes-web.herokuapp.com/";
     private String path;
     OkHttpClient client;
     String response;
@@ -249,4 +251,23 @@ public class DetailsNoteActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.menu_details_note,menu);
         return true;
     }
+
+
+    //back button operation starts
+
+    @Override
+    public void onBackPressed() {
+
+        finish();
+        Intent intent = new Intent(DetailsNoteActivity.this, AllNotesActivity.class);
+        startActivity(intent);
+
+
+    }
+
+
+    //back button operation ends
+
+
+
 }

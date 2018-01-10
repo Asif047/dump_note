@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_app"
+        android:icon="@drawable/app_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_app"
+        android:roundIcon="@drawable/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SplashScreenActivity">
@@ -50,7 +50,10 @@
         <activity android:name=".Home.HomeActivity">
 
         </activity>
-        <activity android:name=".WorkUpdate.ShowWorkUpdateActivity"></activity>
+        <activity android:name=".WorkUpdate.ShowWorkUpdateActivity"
+            >
+
+        </activity>
         <activity android:name=".WorkUpdate.DetailsWorkUpdate.DetailsWorkUpdateActivity" />
         <activity
             android:name=".WorkUpdate.PostWorkUpdate.PostWorkUpdateActivity"

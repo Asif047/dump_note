@@ -90,6 +90,7 @@
                 android:paddingLeft="10dp"
 
                 android:drawableLeft="@drawable/white_phone"
+                android:inputType="number"
 
                 />
 

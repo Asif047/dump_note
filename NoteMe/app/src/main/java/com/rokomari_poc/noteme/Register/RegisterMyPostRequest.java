@@ -54,7 +54,7 @@ public class RegisterMyPostRequest {
 
         RequestBody body = RequestBody.create(JSON, parameter.toString());
         Request request = new Request.Builder()
-                .url("http://192.168.11.205:5001/register")
+                .url("https://notes-web.herokuapp.com/register")
                 .post(body)
                 .header("token","68e109f0f40ca72a15e05cc22786f8e6")
                 .addHeader("content-type", "application/json; charset=utf-8")
